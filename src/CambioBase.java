@@ -16,6 +16,12 @@ public class CambioBase {
     }
 
     //testeo
+    public int getBase() {
+        return base;
+    }
+
+
+    /// teste de brancheo
 
     public int getBase() {
         return base;
