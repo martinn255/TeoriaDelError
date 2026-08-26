@@ -4,5 +4,6 @@ public class Principal {
         //System.out.println("Hello, World!");
         CambioBase nuevo = new CambioBase();
         nuevo.sumaPonderada(5,34);
+        //
     }
 }
