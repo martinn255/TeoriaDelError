@@ -19,7 +19,7 @@ public class CambioBase {
         while (aux!=0 && dig<base){
             
             dig=(int)aux%10;
-            System.out.println("Digito:" + dig );
+            //System.out.println("Digito:" + dig );
             aux=(int)aux/10;
             suma = (int) (dig * Math.pow((double)base, (double)i) + suma);
             //System.out.println("Suma Final:" + suma);
@@ -39,25 +39,27 @@ public class CambioBase {
 
         while (aux > 0) {
             resto = (int) aux%base;
-            System.out.println("resto: " + resto);
+            //System.out.println("resto: " + resto);
             arrayAux.add(resto);
-            aux = (int)aux/2;
-            System.out.println("aux: " +aux);
+            aux = (int)aux/base;
+            //System.out.println("aux: " +aux);
         }
 
-        System.out.println(arrayAux.toString());
+        //System.out.println(arrayAux.toString());
 
         int index = arrayAux.size() - 1;
         double convertido = 0;
 
         while(index >= 0) {
             convertido = convertido * 10 + arrayAux.get(index);
-            System.out.println("convertido: " + convertido);
+            //System.out.println("convertido: " + convertido);
             index--;
         }
+        System.out.println("Convertido:"+convertido);
     }
     public void multiplicacionReiterada(int base,double num){
-
+        //Hola mundo 
+        
     }
 
     //testeo
