@@ -16,5 +16,8 @@ public class CambioBase {
     }
 
     //testeo
+    public int getBase() {
+        return base;
+    }
 
 }
