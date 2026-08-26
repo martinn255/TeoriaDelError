@@ -1,4 +1,6 @@
 import java.math.*;
+import java.util.ArrayList;
+
 public class CambioBase {
     private int base;
     private double num;
@@ -31,7 +33,28 @@ public class CambioBase {
         
     }
     public void divisionReiterada(int base, double num){
+        int aux = (int) num;
+        ArrayList<Integer> arrayAux = new ArrayList<>();
+        int resto;
 
+        while (aux > 0) {
+            resto = (int) aux%base;
+            System.out.println("resto: " + resto);
+            arrayAux.add(resto);
+            aux = (int)aux/2;
+            System.out.println("aux: " +aux);
+        }
+
+        System.out.println(arrayAux.toString());
+
+        int index = arrayAux.size() - 1;
+        double convertido = 0;
+
+        while(index >= 0) {
+            convertido = convertido * 10 + arrayAux.get(index);
+            System.out.println("convertido: " + convertido);
+            index--;
+        }
     }
     public void multiplicacionReiterada(int base,double num){
 
