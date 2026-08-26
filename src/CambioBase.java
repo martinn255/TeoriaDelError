@@ -23,8 +23,6 @@ public class CambioBase {
 
     /// teste de brancheo
 
-    public int getBase() {
-        return base;
-    }
+    //asdadasdasd
 
 }
