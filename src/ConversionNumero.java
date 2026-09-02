@@ -11,10 +11,25 @@ public class ConversionNumero {
         this.num = num; //1AB = 1
         this.base = base;
         cambioBase = new CambioBase();
+
     }
 
-    public void cambiarBase(int base) {
+
+
+    public void convertirNumeroDecimal() {
+        this.numeroConvertido = cambioBase.sumaPonderada(listaDig(), this.base);
+    }
+
+    public void convertirNumero(int base) {
         this.base = base;
+        this.numeroConvertido = cambioBase.divisionReiterada(numeroConvertido, base);
+    }
+
+
+
+
+    public int getBase() {
+        return base;
     }
 
     //Combierte la cadenda en un array list de digitos del string
@@ -33,7 +48,7 @@ public class ConversionNumero {
     }
 
     public void mostrarNumero() {
-        System.out.println(num);
+        System.out.println(numeroConvertido);
     }
 
     public double listANumero(){
@@ -41,5 +56,9 @@ public class ConversionNumero {
     }
 
 
+    public String toString() {
+
+        return "";
+    }
 
 }
