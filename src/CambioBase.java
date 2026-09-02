@@ -2,16 +2,15 @@ import java.math.*;
 import java.util.ArrayList;
 
 public class CambioBase {
-    private int base;
-    private String num;
     private ArrayList<Integer> valorEnDig;
     private double valorReal;
+
+
+
     public CambioBase(){
-        //this.num=num;
-        //this.base=base;
-        //this.valorEnDig.listaDig(num);
-        //this.valorReal=listANumero();
+
     }
+
     //Todos los valores tienen que estar en punto flotante Normalizado y sin normalizar
     /*public void sumaPonderada(int base, String num){
         //double aux = num;
@@ -19,12 +18,6 @@ public class CambioBase {
         double suma=0;
         ArrayList<Integer> aux;
         aux.listaDig(num);
-        /*while (aux!=0 && dig<base){
-            dig=(int)aux%10;
-            aux=(int)aux/10;
-            suma = (int) (dig * Math.pow((double)base, (double)i) + suma);
-            i++;
-        }*
         i=aux.size()-1;//posicion del vector
         double exp=0;
         while(i>=0 && dig<base){
@@ -41,6 +34,7 @@ public class CambioBase {
         }
         
     }*/
+
     public void divisionReiterada(int base, double num){
         int aux = (int) num;
         ArrayList<Integer> arrayAux = new ArrayList<>();
@@ -69,23 +63,7 @@ public class CambioBase {
     public void multiplicacionReiterada(int base,double num){
 
     }
-    //Combierte la cadenda en un array list de digitos del string
-    public ArrayList<Integer> listaDig(String cadena){
-        ArrayList<Integer> aux = new ArrayList<>();
-        char cad;
-        int i;
-        for( i=0; i<cadena.length();i++){
-            cad=cadena.charAt(i);
-            aux.add(Character.getNumericValue(cad));
-        }
-    
-        System.out.println(aux.toString());
-        return aux;
-    }
-    public double listANumero(){
-        double num=1;
-        return num;
-    }
+
 
     public void normalizarNumero(double num){
         double aux=num;
@@ -94,7 +72,7 @@ public class CambioBase {
 
     //testeo
     public int getBase() {
-        return base;
+        return 1;
     }
 
 
