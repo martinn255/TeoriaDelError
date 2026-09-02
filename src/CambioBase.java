@@ -11,7 +11,7 @@ public class CambioBase {
         //this.valorReal=listANumero();
     }
     //Todos los valores tienen que estar en punto flotante Normalizado y sin normalizar
-    public void sumaPonderada(ArrayList<Integer> num,int base){
+    public double sumaPonderada(ArrayList<Integer> num, int base){
         int dig=0,i=0;
         double suma=0;
         ArrayList<Integer> aux=num;
@@ -26,23 +26,27 @@ public class CambioBase {
             exp++;
         }
         if(dig>=base){
-            System.out.println("Error En numero No corresponde a la base");
+            System.out.println("Error: ln numero no corresponde a la base");
         }else{
-            System.out.println("Suma Final:" + suma);
+            System.out.println("Suma en base 10:" + suma);
+            return suma;
         }
+
+        return -1;
+
         
     }
-    public void divisionReiterada(int base, double num){
+    public double divisionReiterada(double num, int base) {
         int aux = (int) num;
         ArrayList<Integer> arrayAux = new ArrayList<>();
         int resto;
 
         while (aux > 0) {
             resto = (int) aux%base;
-            System.out.println("resto: " + resto);
+            //System.out.println("resto: " + resto);
             arrayAux.add(resto);
             aux = (int)aux/base;
-            System.out.println("aux: " +aux);
+            //System.out.println("aux: " +aux);
         }
 
         //System.out.println(arrayAux.toString());
@@ -55,7 +59,9 @@ public class CambioBase {
             //System.out.println("convertido: " + convertido);
             index--;
         }
-        System.out.println("convertido: " + convertido);
+        System.out.println("convertido " + num + " a base " + base + ": " + convertido);
+
+        return convertido;
     }
     public void multiplicacionReiterada(int base,double num){
 
@@ -65,6 +71,18 @@ public class CambioBase {
 
     public void normalizarNumero(double num){
         double aux=num;
+        boolean band = false;
+        int exponente = 0;
+        while(aux > 0 && !band) {
+            if(aux < 1) {
+                band = true;
+            } else {
+                aux = aux / 10;
+                exponente++;
+            }
+
+        }
+        System.out.println(aux + "x10^" + exponente);
 
     }
 

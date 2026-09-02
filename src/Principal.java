@@ -13,7 +13,14 @@ public class Principal {
         ConversionNumero numero = new ConversionNumero("1AB", 16);
 
         numero.listaDig();
-        
+
+        numero.convertirNumeroDecimal();
+        numero.convertirNumero(8);
+        numero.mostrarNumero();
+
+        CambioBase test = new CambioBase();
+
+        test.normalizarNumero(121.25);
 
 
     }
