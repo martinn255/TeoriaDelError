@@ -2,12 +2,12 @@ import java.math.*;
 import java.util.ArrayList;
 
 public class CambioBase {
-    
+
     private ArrayList<Integer> valorEnDig;
     private double valorReal;
-    
+
     public CambioBase(){
-        //this.valorEnDig.listaDig(num); 
+        //this.valorEnDig.listaDig(num);
         //this.valorReal=listANumero();
     }
     //Todos los valores tienen que estar en punto flotante Normalizado y sin normalizar
@@ -15,7 +15,7 @@ public class CambioBase {
         int dig=0,i=0;
         double suma=0;
         ArrayList<Integer> aux=num;
-       
+
         i=aux.size()-1;//posicion del vector
         double exp=0;
         while(i>=0 && dig<base){
@@ -33,8 +33,8 @@ public class CambioBase {
         }
 
         return -1;
+        //asdasdasdasdasdas
 
-        
     }
     public double divisionReiterada(double num, int base) {
         int aux = (int) num;
@@ -67,7 +67,7 @@ public class CambioBase {
 
     }
     //Combierte la cadenda en un array list de digitos del string
-    
+
 
     public void normalizarNumero(double num){
         double aux=num;
