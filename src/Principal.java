@@ -3,7 +3,6 @@ public class Principal {
     public static void main(String[] args)  {
         //System.out.println("Hello, World!");
 
-
         //nuevo.listaDig("45f");
 
         //nuevo.sumaPonderada(5,"34");
@@ -21,7 +20,7 @@ public class Principal {
         CambioBase test = new CambioBase();
 
         test.normalizarNumero(121.25);
-
+        //Recibi cmabios 
 
     }
 }

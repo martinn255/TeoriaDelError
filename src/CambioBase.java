@@ -64,7 +64,8 @@ public class CambioBase {
         return convertido;
     }
     public void multiplicacionReiterada(int base,double num){
-
+        //Hola mundo 
+        
     }
     //Combierte la cadenda en un array list de digitos del string
     
