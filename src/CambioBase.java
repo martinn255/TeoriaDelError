@@ -2,37 +2,41 @@ import java.math.*;
 import java.util.ArrayList;
 
 public class CambioBase {
-    private int base;
-    private double num;
+    
+    private ArrayList<Integer> valorEnDig;
+    private double valorReal;
+    
     public CambioBase(){
-       
-
+        //this.valorEnDig.listaDig(num); 
+        //this.valorReal=listANumero();
     }
     //Todos los valores tienen que estar en punto flotante Normalizado y sin normalizar
-    public void sumaPonderada(int base, double num){
-        double aux = num;
-        System.out.println(aux);
-        System.out.println(base);
-        int dig=0;
-        int i=0;
-        int suma=0;
-        while (aux!=0 && dig<base){
-            
-            dig=(int)aux%10;
+    public double sumaPonderada(ArrayList<Integer> num, int base){
+        int dig=0,i=0;
+        double suma=0;
+        ArrayList<Integer> aux=num;
+       
+        i=aux.size()-1;//posicion del vector
+        double exp=0;
+        while(i>=0 && dig<base){
+            dig=aux.get(i);
             //System.out.println("Digito:" + dig );
-            aux=(int)aux/10;
-            suma = (int) (dig * Math.pow((double)base, (double)i) + suma);
-            //System.out.println("Suma Final:" + suma);
-            i++;
+            suma =(dig * Math.pow((double)base, exp) + suma);
+            i--;
+            exp++;
         }
         if(dig>=base){
-            System.out.println("Error En numero No corresponde a la base");
+            System.out.println("Error: ln numero no corresponde a la base");
         }else{
-            System.out.println("Suma Final:" + suma);
+            System.out.println("Suma en base 10:" + suma);
+            return suma;
         }
+
+        return -1;
+
         
     }
-    public void divisionReiterada(int base, double num){
+    public double divisionReiterada(double num, int base) {
         int aux = (int) num;
         ArrayList<Integer> arrayAux = new ArrayList<>();
         int resto;
@@ -55,16 +59,38 @@ public class CambioBase {
             //System.out.println("convertido: " + convertido);
             index--;
         }
-        System.out.println("Convertido:"+convertido);
+        System.out.println("convertido " + num + " a base " + base + ": " + convertido);
+
+        return convertido;
     }
     public void multiplicacionReiterada(int base,double num){
         //Hola mundo 
         
     }
+    //Combierte la cadenda en un array list de digitos del string
+    
+
+    public void normalizarNumero(double num){
+        double aux=num;
+        boolean band = false;
+        int exponente = 0;
+        while(aux > 0 && !band) {
+            if(aux < 1) {
+                band = true;
+            } else {
+                aux = aux / 10;
+                exponente++;
+            }
+
+        }
+        System.out.println(aux + "x10^" + exponente);
+
+    }
+    //commiteo
 
     //testeo
     public int getBase() {
-        return base;
+        return 1;
     }
 
 
