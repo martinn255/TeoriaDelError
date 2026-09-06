@@ -19,8 +19,11 @@ public class Principal {
 
         CambioBase test = new CambioBase();
 
-        test.normalizarNumero(121.25);
-        //Recibi cmabios 
+        test.normalizarNumero(121.25,-1);
+
+        test.desnormalicion(0.12125, -2);
+        //ACtualizacion
+        
 
     }
 }
