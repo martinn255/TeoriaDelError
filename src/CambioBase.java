@@ -69,21 +69,46 @@ public class CambioBase {
     }
     //Combierte la cadenda en un array list de digitos del string
     
-
-    public void normalizarNumero(double num){
+    //Creo que ya esta completo
+    
+    public void normalizarNumero(double num,int exp){
         double aux=num;
-        boolean band = false;
-        int exponente = 0;
-        while(aux > 0 && !band) {
-            if(aux < 1) {
-                band = true;
-            } else {
-                aux = aux / 10;
-                exponente++;
-            }
+        boolean band =false;
+        int exponente = exp;
+        while(!band) {
 
+            if(aux>=1){
+                aux = aux /10;
+                exponente++;
+                if(aux<1) band=true;
+            }else{
+                if(aux<= 0.1){
+                    aux=aux*10;
+                    exponente--;
+                    if(aux>=0.1) band=true;
+                }
+            }
         }
-        System.out.println(aux + "x10^" + exponente);
+        System.out.println("-------------------Normalizacion---------------------");
+        System.out.println("Numero: " + aux + "x10^" + exponente);
+
+    }
+    //Nota esto solo sirve para pasar cada exponenete a 0 no lo desnormaliza
+    public void desnormalicion(double num,int exp){
+        double aux=num;
+        while(exp!=0){
+            if(exp>0){
+                aux=aux*10;
+                exp--;
+            }else{
+                aux=aux/10;
+                exp++;
+            }
+        }
+        
+        //System.out.println("Valor: " + no);
+        System.out.println("-------------------DesNormalizacion---------------------");
+        System.out.println("Numero: " + aux + "x10^" + exp );
 
     }
     //commiteo
