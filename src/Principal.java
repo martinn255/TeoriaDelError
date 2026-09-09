@@ -1,8 +1,9 @@
+import Tp2PruebaDelError.CambioBase;
+import Tp2PruebaDelError.ConversionNumero;
 
 public class Principal {
     public static void main(String[] args)  {
         //System.out.println("Hello, World!");
-
 
         //nuevo.listaDig("45f");
 
@@ -20,8 +21,11 @@ public class Principal {
 
         CambioBase test = new CambioBase();
 
-        test.normalizarNumero(121.25);
+        test.normalizarNumero(121.25,-1);
 
+        test.desnormalicion(0.12125, -2);
+        //ACtualizacion
+        
 
     }
 }
