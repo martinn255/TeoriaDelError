@@ -1,3 +1,5 @@
+import Tp2PruebaDelError.CambioBase;
+import Tp2PruebaDelError.ConversionNumero;
 
 public class Principal {
     public static void main(String[] args)  {
