@@ -27,9 +27,13 @@ public class Principal {
         test.desnormalicion(0.12125, -2);
         //ACtualizacion
 
-        Metodos aux = new Metodos(null);
+        Metodos aux = new Metodos(x -> x * x * x - x - 2);
 
-        
+        double raiz = aux.Biseccion(1, 2, 0.0001);
+        System.out.println("Raiz aproximada: " + raiz);
 
+        Metodos aux1 = new Metodos(x -> Math.exp(x) -3 );
+        double raiz1 = aux1.Biseccion(0, 2, 0.0001);
+        System.out.println("Raiz aprox: " + raiz1);
     }
 }
