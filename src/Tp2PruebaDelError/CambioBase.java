@@ -66,6 +66,7 @@ public class CambioBase {
     }
     public void multiplicacionReiterada(int base,double num){
         //Hola mundo 
+        //chau
         
     }
     //Combierte la cadenda en un array list de digitos del string
@@ -96,6 +97,7 @@ public class CambioBase {
     }
     //Nota esto solo sirve para pasar cada exponenete a 0 no lo desnormaliza
     public void desnormalicion(double num,int exp){
+        /* 
         double aux=num;
         while(exp!=0){
             if(exp>0){
@@ -110,7 +112,8 @@ public class CambioBase {
         //System.out.println("Valor: " + no);
         System.out.println("-------------------DesNormalizacion---------------------");
         System.out.println("Numero: " + aux + "x10^" + exp );
-
+        */
+       
     }
     //commiteo
 
