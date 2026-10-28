@@ -1,5 +1,6 @@
 import Tp2PruebaDelError.CambioBase;
 import Tp2PruebaDelError.ConversionNumero;
+import Tp3CambioRaiz.*;
 
 public class Principal {
     public static void main(String[] args)  {
@@ -25,6 +26,9 @@ public class Principal {
 
         test.desnormalicion(0.12125, -2);
         //ACtualizacion
+
+        Metodos aux = new Metodos(null);
+
         
 
     }

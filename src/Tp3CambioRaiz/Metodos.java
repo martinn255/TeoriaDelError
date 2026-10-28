@@ -1,12 +1,36 @@
 package Tp3CambioRaiz;
+import java.util.function.DoubleUnaryOperator;
+
 public class Metodos {
     double a;
     double b;
-    double funcion;
-    public Metodos(){
-
+    DoubleUnaryOperator funcion;
+    public Metodos(DoubleUnaryOperator funcion){
+        this.funcion=funcion;
     }  
-    public double Biseccion(double funcion,double a ,double b,double e){ 
+    //f:x->x^2 + 4c
+    public double Biseccion(double a, double b, double e){
+        double fa = funcion.applyAsDouble(a);
+        double fb = funcion.applyAsDouble(b);
+        double c=0;
+        if(fa*fb>0){
+            System.out.println("Salgo de la Operacion");
+            return 0;
+        }
+        c=(a+b)/2;
+        while(Math.abs(funcion.applyAsDouble(c))>e){
+            
+            if(funcion.applyAsDouble(a)*funcion.applyAsDouble(c)<0){
+                b=c;
+            }else{
+                a=c;
+            }
+            c=(a+b)/2;
+        }
+        return c;
+
+    }
+    public double Biseccion222(double funcion,double a ,double b,double e){ 
         double c=0;
         if(funcion*funcion>0){
             System.out.println("Salgo de la Operacion");
