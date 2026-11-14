@@ -28,6 +28,6 @@ public class Principal {
         ConversionNumero b5 = new ConversionNumero("9999999.999999", 10, 10, 10);
         //b5.norConversion();
         b5.norConversion(CambioBase.Modo.CORTE,4);
-
+        System.out.println();
     }
 }
