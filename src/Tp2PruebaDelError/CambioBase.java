@@ -92,13 +92,15 @@ public class CambioBase {
                 num = num.multiply(b).add(BigInteger.valueOf(dig));
             }
             BigInteger den = b.pow(frac.length());
-            valorDec = new BigDecimal(num)
-                    .divide(new BigDecimal(den), t, RoundingMode.HALF_UP);
+            //valorDec = new BigDecimal(num) .divide(new BigDecimal(den), t, RoundingMode.HALF_UP); //Problema que me lo redondea
+            BigDecimal q = new BigDecimal(num), d = new BigDecimal(den); //Corrige lo de arriba
+            valorDec = q.divide(d, t, RoundingMode.DOWN);
         }
 
         BigDecimal total = new BigDecimal(valorEnt).add(valorDec);
 
         // Estos dos los usan divRei y multiRei (siempre sin signo)
+
         this.parteEnt  = valorEnt.toString();
         //this.parteFrac = valorDec.stripTrailingZeros().toPlainString();
         String fs = valorDec.stripTrailingZeros().toPlainString();
