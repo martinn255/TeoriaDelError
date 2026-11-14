@@ -1,39 +1,33 @@
 import Tp2PruebaDelError.CambioBase;
 import Tp2PruebaDelError.ConversionNumero;
 import Tp3CambioRaiz.*;
+import java.math.*;
+import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args)  {
         //System.out.println("Hello, World!");
 
-        //nuevo.listaDig("45f");
+        //CambioBase nue =new CambioBase();
+        //nue.sumaPonde("AA,1A", 16);
+        System.out.println("-----------------------");
+        ConversionNumero b1 = new ConversionNumero("-AA,1A", 16, 12,10);
+        //b1.norConversion();
+        b1.norConversion(CambioBase.Modo.SIMETRICO,6);
+        System.out.println("--------------------");
+        ConversionNumero b2 = new ConversionNumero("0,1", 3, 10,50);
+        //b2.norConversion();
+        System.out.println("--------------------");
+        ConversionNumero b3 = new ConversionNumero("12", 3, 2,10);
+        //b3.norConversion();
+        b3.norConversion(CambioBase.Modo.SIMETRICO,2);
+        System.out.println("--------------------");
+        ConversionNumero b4 = new ConversionNumero("1,89", 10, 3, 10);
+        //b4.norConversion();
+        System.out.println("--------------------");
+        ConversionNumero b5 = new ConversionNumero("9999999.999999", 10, 10, 10);
+        //b5.norConversion();
+        b5.norConversion(CambioBase.Modo.CORTE,4);
 
-        //nuevo.sumaPonderada(5,"34");
-        //nuevo.divisionReiterada(2, 8);
-        //System.out.println(nuevo.listaDig("12af").toString());
-
-        ConversionNumero numero = new ConversionNumero("1AB", 16);
-
-        numero.listaDig();
-
-        numero.convertirNumeroDecimal();
-        numero.convertirNumero(8);
-        numero.mostrarNumero();
-
-        CambioBase test = new CambioBase();
-
-        test.normalizarNumero(121.25,-1);
-
-        test.desnormalicion(0.12125, -2);
-        //ACtualizacion
-
-        Metodos aux = new Metodos(x -> x * x * x - x - 2);
-
-        double raiz = aux.Biseccion(1, 2, 0.0001);
-        System.out.println("Raiz aproximada: " + raiz);
-
-        Metodos aux1 = new Metodos(x -> Math.exp(x) -3 );
-        double raiz1 = aux1.Biseccion(0, 2, 0.0001);
-        System.out.println("Raiz aprox: " + raiz1);
     }
 }
